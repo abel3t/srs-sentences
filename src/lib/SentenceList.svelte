@@ -18,8 +18,8 @@
   let errorText = "";
 
   const randomMinute = () => {
-    const minMinute = 1;
-    const maxMinute = 2;
+    const minMinute = 25;
+    const maxMinute = 45;
 
     return Math.floor(Math.random() * (maxMinute - minMinute + 1)) + minMinute;
   };
