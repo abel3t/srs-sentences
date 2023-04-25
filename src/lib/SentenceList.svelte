@@ -60,6 +60,11 @@
         const today = new Date();
         const latestStudyAt = new Date(sentence.latest_study_at);
 
+        if (!latestStudyAt?.toISOString()) {
+          console.log('latest_study_at is invalid!');
+          return true;
+        }
+
         return today.toISOString() > latestStudyAt.toISOString();
       });
 
