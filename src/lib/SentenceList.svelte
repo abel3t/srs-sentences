@@ -176,6 +176,8 @@
       {/each}
     </ul>
 
+    <div><strong>Total:</strong>{sentences.length || 0}</div>
+
     <LightPaginationNav
       totalItems={sentences.length}
       {pageSize}
