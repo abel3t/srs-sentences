@@ -133,7 +133,7 @@
     try {
       const date = new Date();
 
-      date.setDate(date.getDate() + Math.floor(Math.random() * 3) + 1);
+      date.setDate(date.getDate() + Math.floor(Math.random() * 2) + 1);
       const { error } = await supabase
         .from("sentences")
         .update({ latest_study_at: date })
