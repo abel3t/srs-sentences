@@ -9,7 +9,7 @@
 
   let sentences = [];
   let currentPage = 1;
-  let pageSize = 4;
+  let pageSize = 10;
   $: paginatedSentences = paginate({ items: sentences, pageSize, currentPage });
 
   export let user: User;
