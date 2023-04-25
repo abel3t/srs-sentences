@@ -16,10 +16,11 @@
 
   let newSentenceText = "";
   let errorText = "";
+  let count = 0;
 
   const randomMinute = () => {
     const minMinute = 25;
-    const maxMinute = 45;
+    const maxMinute = 40;
 
     return Math.floor(Math.random() * (maxMinute - minMinute + 1)) + minMinute;
   };
@@ -54,16 +55,11 @@
     };
 
     const loop = async () => {
-      console.log("Call loop to show alert!");
+      console.log("Call loop to show alert:", count);
 
       const srsSentences = (await getSentences())?.filter((sentence) => {
         const today = new Date();
         const latestStudyAt = new Date(sentence.latest_study_at);
-
-        if (!latestStudyAt?.toISOString()) {
-          console.log('latest_study_at is invalid!');
-          return true;
-        }
 
         return today.toISOString() > latestStudyAt.toISOString();
       });
@@ -72,7 +68,7 @@
         console.log("No sentences");
       }
 
-      if (srsSentences?.length) {
+      if (srsSentences?.length && count > 0) {
         const randomIndex = Math.floor(Math.random() * srsSentences.length);
 
         pushNotification(srsSentences[randomIndex]?.text);
@@ -84,6 +80,7 @@
       console.log("Loop in", randMs / 60 / 1000, "minutes", `(${randMs}ms)`);
 
       setTimeout(async () => {
+        ++count;
         await loop();
       }, randMs);
     };
@@ -176,7 +173,7 @@
       {/each}
     </ul>
 
-    <div><strong>Total:</strong>{sentences.length || 0}</div>
+    <div class="px-4 py-4 sm:px-6"><strong>Total:</strong>{sentences.length || 0}</div>
 
     <LightPaginationNav
       totalItems={sentences.length}

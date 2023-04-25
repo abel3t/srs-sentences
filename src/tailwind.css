@@ -16,6 +16,7 @@
   @apply transition duration-150 bg-black text-white;
 }
 
+
 /* Your own custom utilities */
 
 html,
@@ -23,6 +24,12 @@ body,
 #app {
   height: 100vh;
   min-height: 100vh;
+  font-family: 'Bookerly', sans-serif;
+  font-size: large;
+}
+
+input {
+  font-family: 'Bookerly', sans-serif;
 }
 
 h1 {
