@@ -148,13 +148,13 @@
 </script>
 
 <div class="w-full">
-  <h1 class="mb-12">SRS Sentences</h1>
+  <h1 class="mb-4">SRS Sentences</h1>
   <form
     on:submit|preventDefault={() => addSentence(newSentenceText)}
     class="flex gap-2 my-2"
   >
     <input
-      class="rounded w-full p-2"
+      class="rounded w-full p-3"
       type="text"
       placeholder="Nice to meet you!"
       bind:value={newSentenceText}

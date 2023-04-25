@@ -1,12 +1,12 @@
 <script>
   import { supabase } from "./db";
   import SentenceList from "./SentenceList.svelte";
-  
+
   export let user;
 </script>
 
 <div
-  class="w-full h-full flex flex-col justify-center items-center p-4"
+  class="w-full h-full flex flex-col justify-start items-center p-2"
   style="min-width: 250px; max-width: 600px; margin: auto;"
 >
   <SentenceList {user} />
