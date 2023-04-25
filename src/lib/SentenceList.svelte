@@ -19,8 +19,8 @@
   let count = 0;
 
   const randomMinute = () => {
-    const minMinute = 15;
-    const maxMinute = 30;
+    const minMinute = 10;
+    const maxMinute = 25;
 
     return Math.floor(Math.random() * (maxMinute - minMinute + 1)) + minMinute;
   };
