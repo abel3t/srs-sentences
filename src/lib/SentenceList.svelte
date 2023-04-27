@@ -55,7 +55,8 @@
     };
 
     const loop = async () => {
-      console.log("Call loop to show alert:", count);
+      console.log("Call loop to show alert at:", new Date());
+      console.log("Times:", new Date(), count);
 
       const srsSentences = (await getSentences())?.filter((sentence) => {
         const today = new Date();
