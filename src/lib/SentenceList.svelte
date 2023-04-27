@@ -174,7 +174,7 @@
       {/each}
     </ul>
 
-    <div class="px-4 py-4 sm:px-6"><strong>Total:</strong>{sentences.length || 0}</div>
+    <div class="px-4 py-4 sm:px-6"><strong>Total:</strong>&nbsp;{sentences.length || 0}</div>
 
     <LightPaginationNav
       totalItems={sentences.length}
