@@ -9,7 +9,7 @@ export interface Database {
           user_id: string
           text: string | null
           is_ignored?: boolean | null
-          latest_study_at: string
+          latest_study_at?: Date
           inserted_at: string
         }
         Insert: {
@@ -17,15 +17,15 @@ export interface Database {
           user_id: string
           text?: string | null
           is_ignored?: boolean | null
-          latest_study_at: string
-          inserted_at: string
+          latest_study_at?: Date
+          inserted_at?: string
         }
         Update: {
           id?: number
           user_id?: string
           text?: string | null
           is_ignored?: boolean | null
-          latest_study_at: string
+          latest_study_at?: Date
           inserted_at?: string
         }
       }
