@@ -93,7 +93,7 @@
     let { data, error } = await supabase
       .from("sentences")
       .select("*")
-      .order("id", { ascending: false });
+      .order("text", { ascending: false });
 
     if (error) {
       console.log("error", error);
